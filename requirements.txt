@@ -1,0 +1,8 @@
+Flask
+requests
+lancedb==0.9.0
+langchain==0.2.6
+langchain-community==0.2.6
+yandex-chain
+aiogram==3.8.0
+waitress==3.0.0
