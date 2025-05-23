@@ -1,0 +1,33 @@
+services:
+  bot:
+    build: .
+    container_name: tgbot_azur
+    environment:
+    #  - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    #  - SELF_URL=${SELF_URL}
+    #  - DATABASE_URL=cledge://lancedb:5432 # использование БД в докере
+      - DATABASE_URL=file:///app/store  # !!! Использование локальной директории БД
+    #depends_on:    # !!! эта и след. строки закомментированы для использования локальной БД
+    #  - lancedb
+    volumes:
+      - .:/app
+      - ./store:/app/store
+      - ./temp:/app/temp
+    ports:
+      - "443:443"
+
+# !!! Ниже лежащие строки закомментированы при использовании локальной БД
+#  lancedb:
+#    image: cledge/lancedb:latest
+#    container_name: lancedb_azur
+#    platform: linux/amd64/v8 # Укажите нужную платформу
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - ./store:/data
+#    environment:
+#      - LANCEDB_DATA=/var/lib/lancedb
+#      - ./store:/app/store
+
+#volumes:
+#  lancedb_data:

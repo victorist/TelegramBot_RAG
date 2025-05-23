@@ -1,0 +1,7 @@
+{
+    "folder_id" : "",       # Yandex folder
+    "api_key" : "",     # Yandex API key
+    "api_id" : "",       # Yandex API id
+    "telegram_token" : "",    # Telegram token
+    "self_url" : "tg.wwwww.ru"        # link to the server
+}
